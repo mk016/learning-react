@@ -4,4 +4,4 @@ function Mahi(){
     )
 }
 
-export default Mahi
+export default Mahi 
