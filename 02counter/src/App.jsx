@@ -34,9 +34,6 @@ function App() {
   <h2>Counter value : {counter}</h2>
 
 
-  
-  
-
 
   <button onClick={addValue}>Add Value</button>
   <br></br>
