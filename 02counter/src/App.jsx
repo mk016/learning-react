@@ -14,7 +14,7 @@ function App() {
     console.log("Click",Math.random());
   
     //counter = counter + 1
-    setcounter(counter +1)
+    setcounter(counter +1)// this is for add the value
     //console.log("value add",Math.random());
     
     const RemoveValue=()=>{
