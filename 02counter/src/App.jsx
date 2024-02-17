@@ -21,6 +21,7 @@ function App() {
       
       console.log("click",counter)
       console.log("click",Math.random());
+      setcounter (counter -1)
 
     }
 
