@@ -21,7 +21,7 @@ function App() {
       
       console.log("click",counter)
       console.log("click",Math.random());
-      setcounter (counter -1)
+      setcounter (counter -1)// this is for remove the value
 
     }
 
