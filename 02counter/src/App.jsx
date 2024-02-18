@@ -1,46 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React,{useState} from 'react'
+import './App.css';
 
-function App() {
+function App(){
+  const [counter ,setCounter] = useState(15);
 
-  const [counter, setcounter] = useState(15)
+  const addValue = () =>{
+    console.log("click", counter)
+    setCounter(counter + 1);// this is for add value 
+  }
 
-  //let counter =6
-
-  const addValue= ()=>{
+  const removeValue =() =>{
     console.log("click",counter)
-    console.log("Click",Math.random());
-  
-    //counter = counter + 1
-    setcounter(counter +1)// this is for add the value
-    //console.log("value add",Math.random());
-    
-    const RemoveValue=()=>{
-      
-      console.log("click",counter)
-      console.log("click",Math.random());
-      setcounter (counter -1)// this is for remove the value
+    setCounter(counter -1) // this is for remove vale 
 
-    }
-
-   
   }
 
   return (
     <>
-  <h1>Hello My Name is Mahendra</h1>
-  <h2>Counter value : {counter}</h2>
-
-
-
-  <button onClick={addValue}>Add Value</button>
-  <br></br>
-  <button onClick={Removevalue}>Remove value</button>
-
+    
+    <h1>hello My Name is Mahendra</h1>
+    <h2> Count Value : {counter}</h2>
+    <button onClick={addValue}>Add Value</button>
+    <br></br>
+    <button onClick={removeValue}>Remove Value</button>
     </>
-  )
-}
+  );
+  }
 
-export default App
+
+export default App;
