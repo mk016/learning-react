@@ -20,7 +20,7 @@ function Card(props){
             View Profile →  
           </button>
         </div>
-      </div> 
+      </div>   
     )
 }
 
