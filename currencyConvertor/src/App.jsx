@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import InputBox from './Compnents/InputBox'
+
 
 import './App.css'
 
