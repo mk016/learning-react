@@ -1,32 +1,54 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom'; // Import BrowserRouter and Route
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+import Layout from './Layout.jsx'
+import Home from './Compnents/Home/Home.jsx '
+import About from './components/About/About.jsx'
+import Contact from './components/Contact/Contact.jsx'
+import User from './components/User/User.jsx'
+import Github, { githubInfoLoader } from './components/Github/Github.jsx'
 
-import App from './App.jsx';
-import './index.css';
-import Layout from './Layout.jsx';
-import Home from './Compnents/Home/Home.jsx'
-import About from './Compnents/About/About.jsx'
-import Contact from './Compnents/Contact/Contact.jsx'
-import Header from './Compnents/Header/Header.jsx';
-import User from './Compnents/User/User.jsx'
-import Github from './Compnents/Github/Github.jsx'
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <Layout/>,
+//     children: [
+//       {
+//         path: "",
+//         element: <Home />
+//       },
+//       {
+//         path: "about",
+//         element: <About />
+//       },
+//       {
+//         path: "contact",
+//         element: <Contact />
+//       }
+//     ]
+//   }
+// ])
 
-const router = (
-  <Router>
-    <Layout>
-      <Route path='/' element={<Home />} />
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<Layout />}>
+      <Route path='' element={<Home />} />
       <Route path='about' element={<About />} />
       <Route path='contact' element={<Contact />} />
       <Route path='user/:userid' element={<User />} />
-      <Route path='github' element={<Github />} />
-    </Layout>
-  </Router>
-);
+      <Route 
+      loader={githubInfoLoader}
+      path='github' 
+      element={<Github />}
+       />
+    </Route>
+  )
+)
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {router}
+    <RouterProvider router={router} />
   </React.StrictMode>,
-  document.getElementById('root')
-);
+)
